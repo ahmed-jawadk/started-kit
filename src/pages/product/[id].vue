@@ -1,16 +1,17 @@
 <script setup>
-  import { onMounted, ref } from 'vue'
-const route=useRoute()
-const product=ref({})
-onMounted(async()=>{
-  const res=await $api(`products/${route.params.id}`)
-product.value=res
+import { onMounted, ref } from 'vue'
+
+const route = useRoute()
+const product = ref({})
+onMounted(async() => {
+  const res = await $api(`products/${route.params.id}`)
+product.value = res
 })
 </script>
 
 <template>
   <h1>{{ product.title }}</h1>
-  
+
   <div>
     <p class="text-h4 text-start bg-secondary pa-2 d-inline-block mt-5 cursor-pointer">
       {{ product.category }}

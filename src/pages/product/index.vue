@@ -1,7 +1,7 @@
 <script setup >
 import productCard from '@/views/pages/product/product-card.vue'
 import { onMounted, ref } from 'vue'
-
+import productList from '@/views/pages/product-list.vue'
 const products = ref([])
 
 onMounted(async () => {
@@ -21,6 +21,7 @@ onMounted(async () => {
       <productCard :data="product" />
     </v-col>
   </v-row>
+  <productList />
 </template>
 
 <style lang="scss">

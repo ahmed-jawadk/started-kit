@@ -13,5 +13,10 @@ export default [
     title: 'Product',
     to: { name: 'product' },
     icon: { icon: 'tabler-file' },
+  },
+  {
+    title: 'Product List Page',
+    to: { name: 'product-product-list-page' },
+    icon: { icon: 'tabler-file' },  
   }
 ]

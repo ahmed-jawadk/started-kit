@@ -76,4 +76,6 @@ const goToProduct = (id) => {
 </template>
 
 <style lang="scss">
+
+  
 </style>
