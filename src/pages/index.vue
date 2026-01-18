@@ -2,6 +2,14 @@
 import { onMounted, ref } from 'vue'
 import {useI18n} from 'vue-i18n'
 
+import { useTheme } from 'vuetify'
+
+const theme = useTheme()
+
+function toggleDarkMode() {
+  theme.global.name.value =
+    theme.global.name.value === 'light' ? 'dark' : 'light'
+}
 const { t } = useI18n()
 const data=ref([])
 async function getData(){
@@ -15,6 +23,10 @@ onMounted(()=>{
 
 </script>
 <template>
+    <v-btn @click="toggleDarkMode">
+    Toggle Dark Mode
+    
+  </v-btn>
   <h1>{{ t('home-page') }}</h1>
   <div>
     <VCard
@@ -22,20 +34,10 @@ onMounted(()=>{
       title="Kick start your project 🚀"
     >
       <VCardText>{{t('home-page-text')}}</VCardText>
-      <VCardText>
-<i18n-t keypath="docs.read">
-  <template #link>
-  <a
-    href="https://demos.pixinvent.com/vuexy-vuejs-admin-template/documentation/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-decoration-none"
-  >
-    {{ $t('docs.link') }}
-  </a>
-  </template>
-</i18n-t>
-      </VCardText>
+<VCardText>
+  <span v-html="t('docs.read')"></span>
+</VCardText>
+
     </VCard>
 <div v-for="item in data " :key="item.id">
 <p>{{item.title}}</p>
