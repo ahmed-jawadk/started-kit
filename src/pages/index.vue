@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
+import {useI18n} from 'vue-i18n'
 
+const { t } = useI18n()
 const data=ref([])
 async function getData(){
   const result= await $api('/products')
@@ -13,21 +15,26 @@ onMounted(()=>{
 
 </script>
 <template>
+  <h1>{{ t('home-page') }}</h1>
   <div>
     <VCard
       class="mb-6"
       title="Kick start your project 🚀"
     >
-      <VCardText>All the best for your new project.</VCardText>
+      <VCardText>{{t('home-page-text')}}</VCardText>
       <VCardText>
-        Please make sure to read our <a
-          href="https://demos.pixinvent.com/vuexy-vuejs-admin-template/documentation/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-decoration-none"
-        >
-          Template Documentation
-        </a> to understand where to go from here and how to use our template.
+<i18n-t keypath="docs.read">
+  <template #link>
+  <a
+    href="https://demos.pixinvent.com/vuexy-vuejs-admin-template/documentation/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-decoration-none"
+  >
+    {{ $t('docs.link') }}
+  </a>
+  </template>
+</i18n-t>
       </VCardText>
     </VCard>
 <div v-for="item in data " :key="item.id">

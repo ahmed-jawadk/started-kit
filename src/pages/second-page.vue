@@ -1,12 +1,16 @@
+<script setup >
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
+
 <template>
+
   <div>
-    <VCard title="Create Awesome 🙌">
-      <VCardText>This is your second page.</VCardText>
+
+    <VCard :title="t('second page')" class="pa-4">
       <VCardText>
-        Chocolate sesame snaps pie carrot cake pastry pie lollipop muffin.
-        Carrot cake dragée chupa chups jujubes. Macaroon liquorice cookie
-        wafer tart marzipan bonbon. Gingerbread jelly-o dragée
-        chocolate.
+{{ t('second-page-text') }}
       </VCardText>
     </VCard>
   </div>

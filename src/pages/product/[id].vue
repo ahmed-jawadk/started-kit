@@ -50,10 +50,7 @@ product.value = res
           <v-card-text class="d-flex flex-column pa-0">
             <div class="text-h3 mb-3 text-primary font-weight-bold">
               {{ product.price }} $
-            </div>
-
-           
-           
+            </div>     
             <div class="d-flex align-center mb-5">
               <v-rating
                 :model-value="product.rating?.rate"

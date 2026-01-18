@@ -1,32 +1,33 @@
 <script setup>
-import productList from '@/views/pages/product-list.vue'
-import productCard from '@/views/pages/product/product-card.vue'
+import ProductCard from '@/views/pages/product/product-card.vue'
+import ProductList from '@/views/pages/product-list.vue'
 import { onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const products = ref([])
 
 onMounted(async () => {
-  const res = await $api("/products")
+  const res = await $api('/products')
+
   products.value = res
 })
 </script>
 
 <template>
   <div>
-    <v-row>
-      <v-col
+    <h1>{{ t('product-card') }}</h1>
+    <VRow>
+      <VCol
         v-for="product in products"
         :key="product.id"
         cols="12"
         md="4"
       >
-        <productCard :data="product" />
-      </v-col>
-    </v-row>
-    <productList />
+        <ProductCard :data="product" />
+      </VCol>
+    </VRow>
+    <ProductList />
   </div>
 </template>
-
-<style lang="scss">
-
-</style>

@@ -27,7 +27,7 @@ const headers = ref([
 </script>
 
 <template>
-  <h1>{{ t('title') }}</h1>
+  <h1>{{ t('produt-list-title') }}</h1>
   <VDataTable
     :headers="headers"
     :items="products"

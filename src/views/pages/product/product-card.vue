@@ -1,13 +1,11 @@
 <script setup>
 import { ref } from 'vue';
-
 defineProps({
   data: {
     type: Object,
     required: true,
   },
 })
-
 const show = ref(false)
 const router = useRouter()
 const goToProduct = (id) => {
@@ -29,7 +27,7 @@ const goToProduct = (id) => {
     ></v-img>
 
     <v-card-title>
-      {{ data.title }}  
+      {{ data.title }}
     </v-card-title>
 
     <v-card-subtitle class="d-flex justify-space-between">
