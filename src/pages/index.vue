@@ -1,4 +1,6 @@
 <script setup>
+import { onMounted, ref } from 'vue'
+
 const data=ref([])
 async function getData(){
   const result= await $api('/products')
@@ -28,7 +30,7 @@ onMounted(()=>{
         </a> to understand where to go from here and how to use our template.
       </VCardText>
     </VCard>
-<div v-for="item in data ">
+<div v-for="item in data " :key="item.id">
 <p>{{item.title}}</p>
 </div>
     <VCard title="Want to integrate JWT? 🔒">

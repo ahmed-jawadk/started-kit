@@ -1,10 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-
+import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 const route = useRoute()
 const router = useRouter()
 const products = ref([])
-
+const { t } = useI18n()
 const handleRowClick = (event, { item }) => {
   router.push({ name: 'product-id', params: { id: item.id } })
 }
@@ -26,6 +27,7 @@ const headers = ref([
 </script>
 
 <template>
+  <h1>{{ t('title') }}</h1>
   <VDataTable
     :headers="headers"
     :items="products"
@@ -33,7 +35,7 @@ const headers = ref([
     @click:row="handleRowClick"
   >
     <!-- Image Slot -->
-    <template v-slot:item.image="{ item }">
+    <template #[`item.image`]="{ item }">
       <VImg
         :src="item.image"
         height="70"

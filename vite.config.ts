@@ -84,6 +84,9 @@ export default defineConfig({
       scss: {
         loadPaths: ['node_modules'],
       },
+      sass: {
+        loadPaths: ['node_modules'],
+      },
     },
   },
   define: { 'process.env': {} },
@@ -104,7 +107,6 @@ export default defineConfig({
     chunkSizeWarningLimit: 5000,
   },
   optimizeDeps: {
-    exclude: ['vuetify'],
     entries: [
       './src/**/*.vue',
     ],

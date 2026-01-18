@@ -12,7 +12,6 @@ const show = ref(false)
 const router = useRouter()
 const goToProduct = (id) => {
   router.push(`/product/${id}`)
-
 }
 
 </script>
@@ -30,8 +29,8 @@ const goToProduct = (id) => {
     ></v-img>
 
     <v-card-title>
-{{ data.title }}  
-  </v-card-title>
+      {{ data.title }}  
+    </v-card-title>
 
     <v-card-subtitle class="d-flex justify-space-between">
       <span>{{ data.price }} $</span>
@@ -63,35 +62,7 @@ const goToProduct = (id) => {
       </div>
     </v-expand-transition>
   </v-card>
-
-
-
-
-
-
-
-
-
-
 </template>
 
 <style lang="scss">
-
-  
-</style>
-
-<script setup>
-
-</script>
-
-<template>
-  <VCard>
-    <VCardText>
-      this is product card
-    </VCardText>
-  </VCard>
-</template>
-
-<style lang="scss">
-
 </style>

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import ProductList from '@/views/pages/product-list.vue';
 </script>
 

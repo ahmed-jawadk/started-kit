@@ -1,4 +1,6 @@
 import { deepMerge } from '@antfu/utils'
+import { resolveVuetifyTheme } from '@core/utils/vuetify'
+import { themeConfig } from '@themeConfig'
 import type { App } from 'vue'
 import { createVuetify } from 'vuetify'
 import { VBtn } from 'vuetify/components/VBtn'
@@ -6,11 +8,10 @@ import { VVideo } from 'vuetify/labs/VVideo'
 import defaults from './defaults'
 import { icons } from './icons'
 import { staticPrimaryColor, staticPrimaryDarkenColor, themes } from './theme'
-import { themeConfig } from '@themeConfig'
 
 // Styles
-import { cookieRef } from '@/@layouts/stores/config'
 import '@core/scss/template/libs/vuetify/index.scss'
+import { cookieRef } from '@layouts/stores/config'
 import 'vuetify/styles'
 
 export default function (app: App) {
